@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.carolis.todo.entity.Todo;
 import com.carolis.todo.repository.TodoRepository;
+import com.carolis.todo.service.exceptions.ObjectNotFoundException;
 
 @Service
 public class TodoService {
@@ -17,7 +18,7 @@ public class TodoService {
 
 	public Todo findById(Integer id) {
 		Optional<Todo> obj = repository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Tarefa não encontrada. Id: " + id));
 	}
 
 	public List<Todo> findAllNotFinished() {
@@ -33,4 +34,22 @@ public class TodoService {
 	public List<Todo> findAll() {
 		List<Todo> list = repository.findAll();
 		return list;	}
+
+	public Todo create(Todo obj) {
+		obj.setId(null);
+		return repository.save(obj);
+	}
+
+	public void delete(Integer id) {
+		repository.deleteById(id);
+	}
+
+	public Todo update(Integer id, Todo obj) {
+		Todo newObj = findById(id);
+		newObj.setDescription(obj.getDescription());
+		newObj.setTitle(obj.getTitle());
+		newObj.setFinished(obj.getFinished());
+		newObj.setFinishDate(obj.getFinishDate());
+		return repository.save(newObj);
+	}
 }
