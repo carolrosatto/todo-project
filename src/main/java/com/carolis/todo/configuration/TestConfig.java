@@ -1,5 +1,7 @@
 package com.carolis.todo.configuration;
 
+import java.text.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +17,7 @@ public class TestConfig {
 	DBService dbservice;
 	
 	@Bean
-	public boolean instance() {
+	public boolean instance() throws ParseException {
 		this.dbservice.dataBaseInstance();
 		return true;
 	}
