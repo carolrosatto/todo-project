@@ -1,5 +1,10 @@
 .footer {
+    height: 3rem;
     position: fixed;
     bottom: 0;
     justify-content: center;
+}
+
+p {
+    font-size: 70%;
 }

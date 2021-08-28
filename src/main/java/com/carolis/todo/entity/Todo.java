@@ -1,12 +1,14 @@
 package com.carolis.todo.entity;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Todo implements Serializable {
@@ -16,17 +18,17 @@ public class Todo implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
 	private String title;
 	private String description;
-	private LocalDateTime finishDate;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private Date finishDate;
 	private Boolean finished = false;
 
 	public Todo() {
 		super();
 	}
 
-	public Todo(Integer id, String title, String description, LocalDateTime finishDate, Boolean finished) {
+	public Todo(Integer id, String title, String description, Date finishDate, Boolean finished) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -59,11 +61,11 @@ public class Todo implements Serializable {
 		this.description = description;
 	}
 
-	public LocalDateTime getFinishDate() {
+	public Date getFinishDate() {
 		return finishDate;
 	}
 
-	public void setFinishDate(LocalDateTime finishDate) {
+	public void setFinishDate(Date finishDate) {
 		this.finishDate = finishDate;
 	}
 
