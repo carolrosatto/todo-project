@@ -1,7 +1,7 @@
 <div class="container">
 	<section class="content">
 		<div class="buttons">
-			<button class="finished" mat-raised-button matBadge="{{closed}}" color="accent"
+			<button (click)="goFinished()" class="finished" mat-raised-button matBadge="{{closed}}" color="accent"
 				aria-label="Button of finished todos">
 				Finalizados
 			</button>
@@ -18,13 +18,13 @@
 						<mat-card-subtitle>{{item.description}}</mat-card-subtitle>
 					</mat-card-header>
 					<article class="actions">
-						<button mat-mini-fab color="primary" aria-label="Finish task button">
+						<button (click)="finishTask(item)" mat-mini-fab color="accent" aria-label="Finish task button">
 							<mat-icon>done</mat-icon>
 						</button>
 						<button mat-mini-fab color="primary" aria-label="Edit task button">
 							<mat-icon>edit</mat-icon>
 						</button>
-						<button mat-mini-fab color="accent" aria-label="Delete task button">
+						<button (click)="delete(item.id)" mat-mini-fab color="primary" aria-label="Delete task button">
 							<mat-icon>delete</mat-icon>
 						</button>
 					</article>

@@ -21,8 +21,8 @@ public class DBService {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		Todo t1 = new Todo(null, "Estudar", "Estudar Java", sdf.parse("20/06/2021"), false);
-		Todo t2 = new Todo(null, "Exercício", "Fazer 40 min de atividade física", sdf.parse("20/06/2021"), false);
-		Todo t3 = new Todo(null, "Dormir", "Dormir 8 horas", sdf.parse("20/06/2021"), true);
+		Todo t2 = new Todo(null, "Exercício", "Fazer 40 min de atividade física", sdf.parse("20/06/2021"), true);
+		Todo t3 = new Todo(null, "Dormir", "Dormir 8 horas", sdf.parse("20/06/2021"), false);
 		Todo t4 = new Todo(null, "Banho dogs", "Banho Bruno e Julia", sdf.parse("20/06/2021"), true);
 
 		todoRepository.saveAll(Arrays.asList(t1, t2, t3, t4));
