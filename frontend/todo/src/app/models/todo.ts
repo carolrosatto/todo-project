@@ -1,7 +1,7 @@
 export interface Todo {
     id?: String,
     title: String,
-    description?: String,
-    finishDate: Date,
+    description: String,
+    finishDate: any,
     finished: boolean
 }

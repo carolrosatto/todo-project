@@ -1,0 +1,22 @@
+.main-add-card{
+    width: 30%;
+    margin: 3rem auto 0 auto;
+    border-radius: 10px;
+}
+h2{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.todo-info{
+    display: flex;
+    flex-direction: column;
+}
+.todo-buttons{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+}
+
+.cancel{
+    margin-right: .4rem;
+}

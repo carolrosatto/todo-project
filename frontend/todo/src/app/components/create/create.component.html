@@ -1,0 +1,27 @@
+<mat-card class="main-add-card">
+  <h2>Novo To-do</h2>
+  <form>
+    <mat-form-field class="finish-date" appearance="fill" color="accent">
+      <mat-label>Data</mat-label>
+      <input [(ngModel)]="todo.finishDate" name="todo.finishDate" matInput [matDatepicker]="dp3">
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <div class="todo-info">
+      <mat-form-field class="todo-title" appearance="fill" color="accent">
+        <mat-label>Título</mat-label>
+        <input [(ngModel)]="todo.title" name="todo.title" matInput placeholder="Ex. Estudar">
+      </mat-form-field>
+      <mat-form-field class="todo-description" appearance="fill" color="accent">
+        <mat-label>Descrição</mat-label>
+        <input [(ngModel)]="todo.description" name="todo.description" matInput placeholder="Ex. Estudar matéria da aula">
+      </mat-form-field>
+    </div>
+
+    <div class="todo-buttons">
+      <button (click)="goHome()" mat-raised-button class="cancel" color="accent">Cancelar</button>
+      <button (click)="createTodo()" mat-raised-button class="finish" color="primary">Criar</button>
+    </div>
+  </form>
+</mat-card>

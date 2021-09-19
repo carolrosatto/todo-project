@@ -5,7 +5,7 @@
 				aria-label="Button of finished todos">
 				Finalizados
 			</button>
-			<button class="new-todo" mat-fab color="primary" aria-label="Button to add a new to-do">
+			<button routerLink="create" class="new-todo" mat-fab color="primary" aria-label="Button to add a new to-do">
 				<mat-icon>add</mat-icon>
 			</button>
 		</div>
@@ -21,7 +21,7 @@
 						<button (click)="finishTask(item)" mat-mini-fab color="accent" aria-label="Finish task button">
 							<mat-icon>done</mat-icon>
 						</button>
-						<button mat-mini-fab color="primary" aria-label="Edit task button">
+						<button routerLink="edit/{{item.id}}" mat-mini-fab color="primary" aria-label="Edit task button">
 							<mat-icon>edit</mat-icon>
 						</button>
 						<button (click)="delete(item.id)" mat-mini-fab color="primary" aria-label="Delete task button">
