@@ -55,5 +55,4 @@ export class ReadAllComponent implements OnInit {
   goFinished(): void {
     this.router.navigate(['finished']);
   }
-
 }
